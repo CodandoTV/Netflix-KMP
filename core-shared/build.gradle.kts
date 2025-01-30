@@ -5,7 +5,7 @@ plugins {
 
 kotlin {
     sourceSets {
-        androidMain.dependencies {
+        commonMain.dependencies {
             implementation(libs.bundles.koin)
         }
     }

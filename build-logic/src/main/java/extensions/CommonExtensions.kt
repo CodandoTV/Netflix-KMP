@@ -6,6 +6,9 @@ import Config
 import com.android.build.api.dsl.CommonExtension
 import org.gradle.api.JavaVersion
 import org.gradle.api.Project
+import org.gradle.api.artifacts.VersionCatalog
+import org.gradle.api.artifacts.VersionCatalogsExtension
+import org.gradle.kotlin.dsl.getByType
 
 internal fun CommonExtension<*, *, *, *, *>.setupPackingOptions() {
     packaging {
@@ -51,3 +54,9 @@ internal fun CommonExtension<*, *, *, *, *>.setupNameSpace(project: Project) {
 
     println(">>>> $namespace")
 }
+
+internal val Project.libs: VersionCatalog
+    get() {
+        return project.extensions.getByType<VersionCatalogsExtension>()
+            .named("libs")
+    }

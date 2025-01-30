@@ -2,7 +2,6 @@
 
 plugins {
     id("com.streamplayer.kmp-library")
-    alias(libs.plugins.ksp)
     alias(libs.plugins.jetbrains.compose)
     alias(libs.plugins.compose.compiler)
 }
@@ -10,36 +9,21 @@ plugins {
 kotlin {
     sourceSets {
         commonMain.dependencies {
-            implementation(libs.koin.annotations)
-            implementation(libs.koin.core)
-            implementation(libs.paging.compose)
+                implementation(libs.bundles.koin)
+                implementation(libs.paging.compose)
+                implementation(projects.coreNetworking)
+                implementation(projects.coreNavigation)
+                implementation(projects.coreShared)
+                implementation(projects.coreSharedUi)
+                implementation(projects.coreLocalStorage)
+
+                implementation(compose.material3)
+                implementation(compose.ui)
+                implementation(compose.preview)
+                implementation(libs.navigation.compose)
+                implementation(libs.bundles.networking)
+                implementation(libs.coil)
+                implementation(libs.bundles.androidSupport)
+            }
         }
-
-        androidMain.dependencies {
-            implementation(projects.coreNetworking)
-            implementation(projects.coreNavigation)
-            implementation(projects.coreShared)
-            implementation(projects.coreSharedUi)
-            implementation(projects.coreLocalStorage)
-
-            implementation(compose.material3)
-            implementation(compose.ui)
-            implementation(compose.preview)
-            implementation(libs.navigation.compose)
-            implementation(libs.bundles.koin)
-            implementation(libs.bundles.networking)
-            implementation(libs.coil)
-            implementation(libs.koin.annotations)
-            implementation(libs.bundles.androidSupport)
-        }
-    }
-}
-
-dependencies {
-    add("kspCommonMainMetadata",libs.koin.compiler)
-    add("kspAndroid", libs.koin.compiler)
-}
-
-ksp {
-    arg("KOIN_CONFIG_CHECK","true")
 }

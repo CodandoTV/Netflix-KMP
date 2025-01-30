@@ -7,7 +7,7 @@ plugins {
 }
 kotlin {
     sourceSets {
-        androidMain.dependencies {
+        commonMain.dependencies {
             implementation(projects.featureListStreams)
             implementation(projects.featureDetail)
             implementation(projects.featureSearch)
@@ -25,8 +25,6 @@ kotlin {
             implementation(libs.bundles.koin)
             implementation(libs.bundles.androidSupport)
             implementation(libs.bundles.kotlin)
-
-            implementation(libs.lottie)
             implementation(libs.lottie)
         }
     }

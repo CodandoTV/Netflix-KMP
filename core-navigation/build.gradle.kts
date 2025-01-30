@@ -7,7 +7,7 @@ plugins {
 
 kotlin {
     sourceSets {
-        androidMain.dependencies {
+        commonMain.dependencies {
             implementation(libs.bundles.kotlin)
             implementation(libs.navigation.compose)
             implementation(compose.material3)

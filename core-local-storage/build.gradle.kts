@@ -5,7 +5,7 @@ plugins {
 
 kotlin {
     sourceSets {
-        androidMain.dependencies {
+        commonMain.dependencies {
             implementation(libs.bundles.room)
             implementation(libs.bundles.kotlin)
             implementation(libs.bundles.koin)
@@ -14,8 +14,8 @@ kotlin {
 }
 
 dependencies {
-    add("kspCommonMainMetadata",libs.koin.compiler)
-    add("kspAndroid", libs.koin.compiler)
+    add("kspCommonMainMetadata",libs.koin.ksp.compiler)
+    add("kspAndroid", libs.koin.ksp.compiler)
 }
 
 ksp {

@@ -87,7 +87,7 @@ koin_test = { group = "io.insert-koin", name = "koin-test-junit4", version.ref =
 koin_android = { group = "io.insert-koin", name = "koin-android", version.ref = "koin" }
 koin_core = { group = "io.insert-koin", name = "koin-core", version.ref = "koin" }
 koin_annotations = { group = "io.insert-koin", name = "koin-annotations", version.ref = "koin-ksp" }
-koin_compiler = { group = "io.insert-koin", name = "koin-ksp-compiler", version.ref = "koin-ksp" }
+koin_ksp_compiler = { group = "io.insert-koin", name = "koin-ksp-compiler", version.ref = "koin-ksp" }
 koin_compose = { group = "io.insert-koin", name = "koin-androidx-compose", version.ref = "koin" }
 
 #Networking

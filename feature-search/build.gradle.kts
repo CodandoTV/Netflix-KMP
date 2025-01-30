@@ -2,7 +2,6 @@
 
 plugins {
     id("com.streamplayer.kmp-library")
-    alias(libs.plugins.ksp)
     alias(libs.plugins.jetbrains.compose)
     alias(libs.plugins.compose.compiler)
 }
@@ -11,11 +10,7 @@ kotlin {
     sourceSets {
         commonMain.dependencies {
             implementation(libs.paging.compose)
-            implementation(libs.koin.annotations)
             implementation(libs.koin.core)
-        }
-
-        androidMain.dependencies {
             implementation(projects.coreNetworking)
             implementation(projects.coreNavigation)
             implementation(projects.coreShared)
@@ -29,17 +24,7 @@ kotlin {
             implementation(libs.bundles.koin)
             implementation(libs.bundles.networking)
             implementation(libs.coil)
-            implementation(libs.koin.annotations)
             implementation(libs.bundles.androidSupport)
         }
     }
-}
-
-dependencies {
-    add("kspCommonMainMetadata",libs.koin.compiler)
-    add("kspAndroid", libs.koin.compiler)
-}
-
-ksp {
-    arg("KOIN_CONFIG_CHECK","true")
 }
