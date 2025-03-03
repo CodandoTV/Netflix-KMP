@@ -4,4 +4,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 
 @Composable
-expect fun LottieComponent(modifier : Modifier = Modifier, onAnimationFinished: () -> Unit)
+expect fun LottieComponent(
+    jsonString: String,
+    modifier: Modifier = Modifier,
+    onAnimationFinished: () -> Unit
+)
